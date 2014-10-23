@@ -16,7 +16,7 @@
   <version>${aipo.version}</version>
   <packaging>jar</packaging>
 
-  <name>Aipo Test Portlet</name>
+  <name>Aipo Bookmark Portlet</name>
 
   <build>
     <plugins>

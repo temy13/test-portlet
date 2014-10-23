@@ -15,7 +15,7 @@
   <version>7.0.2</version>
   <packaging>pom</packaging>
 
-  <name>Aipo Portlets</name>
+  <name>Aipo Portlets </name>
 
   <modules>
     <module>activity</module>
