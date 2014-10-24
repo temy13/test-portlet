@@ -287,6 +287,8 @@ public class TestSelectData extends
         ExpressionFactory.likeExp(EipTTest.TEST_NAME_PROPERTY, keyword);
       Expression exp2 =
         ExpressionFactory.likeExp(EipTTest.NOTE_PROPERTY, keyword);
+      Expression exp7 =
+    	        ExpressionFactory.likeExp(EipTTest.TEST_URL_PROPERTY, keyword);
 
       /* フルネーム対応 */
       String first_name = keyword;
@@ -321,6 +323,7 @@ public class TestSelectData extends
 
       query.andQualifier(exp
         .orExp(exp2)
+        .orExp(exp7)
         .orExp(exp3)
         .orExp(exp4)
         .orExp(exp5)
@@ -567,6 +570,10 @@ public class TestSelectData extends
 //        .getPriority()
 //        .intValue()));
       rd.setNote(record.getNote());
+      //滝川
+      rd.setTestURL(record.getTestURL());
+
+
 //      rd.setCreateUserName(ALEipUtils
 //        .getALEipUser(record.getCreateUserId())
 //        .getAliasName()

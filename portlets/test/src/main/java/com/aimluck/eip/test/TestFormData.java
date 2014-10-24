@@ -126,6 +126,12 @@ public class TestFormData extends ALAbstractFormData {
 
 //  private EipTTestCategory category;
 
+
+  /** 滝川 入力項目追加 URL */
+  private ALStringField test_url;
+
+
+
   /** ログインユーザーのID * */
   private int login_user_id;
 
@@ -222,6 +228,11 @@ public class TestFormData extends ALAbstractFormData {
     note = new ALStringField();
     note.setFieldName(ALLocalizationUtils.getl10n("TODO_SETFIELDNAME_MEMO"));
     note.setTrim(false);
+    /* 滝川 入力項目追加 URL */
+    test_url = new ALStringField();
+    test_url.setFieldName("URL");
+    test_url.setTrim(false);
+
     // 開始日
 //    start_date = new ALDateField();
 //    start_date.setFieldName(ALLocalizationUtils
@@ -260,6 +271,10 @@ public class TestFormData extends ALAbstractFormData {
 //      .getl10n("TODO_SETFIELDNAME_ADD_ON_SCHEDULE_FLG"));
 //    addon_schedule_flg.setValue("T");
 //    addon_schedule_flg.setTrim(true);
+
+
+
+
   }
 
   /**
@@ -283,6 +298,7 @@ public class TestFormData extends ALAbstractFormData {
     test_name.limitMaxLength(50);
     // メモの文字数制限
     note.limitMaxLength(1000);
+    test_url.limitMaxLength(100);
 //    if (is_new_category) {
 //      // カテゴリ名必須項目
 //      category_name.setNotNull(true);
@@ -360,6 +376,8 @@ public class TestFormData extends ALAbstractFormData {
 //    }
     // メモ
     note.validate(msgList);
+    //滝川 URL
+    test_url.validate(msgList);
 //    if (is_new_category) {
 //      // カテゴリ名
 //      category_name.validate(msgList);
@@ -414,11 +432,15 @@ public class TestFormData extends ALAbstractFormData {
 //      priority.setValue(test.getPriority().longValue());
       // メモ
       note.setValue(test.getNote());
+      /* 滝川 入力項目追加 URL*/
+      test_url.setValue(test.getTestURL());
       // 公開区分
 //      public_flag.setValue(test.getPublicFlag());
 
       // 担当者
       user_id.setValue(test.getTurbineUser().getUserId());
+
+
 
 //      addon_schedule_flg.setValue(test.getAddonScheduleFlg());
     } catch (Exception ex) {
@@ -523,6 +545,8 @@ public class TestFormData extends ALAbstractFormData {
 //      test.setPriority(Short.valueOf((short) priority.getValue()));
       // メモ
       test.setNote(note.getValue());
+      test.setTestURL(test_url.getValue());
+
       // 公開区分
 //      test.setPublicFlag(public_flag.getValue());
 //      test.setAddonScheduleFlg(addon_schedule_flg.getValue());
@@ -617,7 +641,6 @@ public class TestFormData extends ALAbstractFormData {
 //          return false;
 //        }
 //      }
-
     } catch (Throwable t) {
       Database.rollback();
       logger.error("[TestFormData]", t);
@@ -724,6 +747,8 @@ public class TestFormData extends ALAbstractFormData {
 //      test.setPriority(Short.valueOf((short) priority.getValue()));
       // メモ
       test.setNote(note.getValue());
+      // 滝川 URL
+      test.setTestURL(test_url.getValue());
       // 公開区分
 //      test.setPublicFlag(public_flag.getValue());
 //      test.setAddonScheduleFlg(addon_schedule_flg.getValue());
@@ -840,6 +865,17 @@ public class TestFormData extends ALAbstractFormData {
   public ALStringField getNote() {
     return note;
   }
+
+  /**
+   * 滝川
+   * testURLを取得します。 <BR>
+   *
+   * @return
+   */
+  public ALStringField getTestURL() {
+    return test_url;
+  }
+
 
   /**
    * 優先度を取得します。 <BR>

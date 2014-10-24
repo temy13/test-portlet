@@ -426,6 +426,7 @@
 		<db-attribute name="NOTE" type="CLOB"/>
 		<db-attribute name="TEST_ID" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="4"/>
 		<db-attribute name="TEST_NAME" type="VARCHAR" length="99"/>
+		<db-attribute name="TEST_URL" type="VARCHAR" length="99"/>
 		<db-attribute name="UPDATE_DATE" type="TIMESTAMP" length="8"/>
 		<db-attribute name="USER_ID" type="INTEGER" isMandatory="true" length="4"/>
 	</db-entity>
@@ -967,6 +968,7 @@
 		<obj-attribute name="createDate" type="java.util.Date" db-attribute-path="CREATE_DATE"/>
 		<obj-attribute name="note" type="java.lang.String" db-attribute-path="NOTE"/>
 		<obj-attribute name="testName" type="java.lang.String" db-attribute-path="TEST_NAME"/>
+		<obj-attribute name="testURL" type="java.lang.String" db-attribute-path="TEST_URL"/>
 		<obj-attribute name="updateDate" type="java.util.Date" db-attribute-path="UPDATE_DATE"/>
 		<obj-attribute name="userId" type="java.lang.Integer" db-attribute-path="USER_ID"/>
 	</obj-entity>
@@ -1098,6 +1100,8 @@
 		<obj-attribute name="route" type="java.lang.String" db-attribute-path="ROUTE"/>
 		<obj-attribute name="routeName" type="java.lang.String" db-attribute-path="ROUTE_NAME"/>
 		<obj-attribute name="updateDate" type="java.util.Date" db-attribute-path="UPDATE_DATE"/>
+	</obj-entity>
+	<obj-entity name="UntitledObjEntity" className="com.aimluck.eip.cayenne.om.portlet.UntitledObjEntity">
 	</obj-entity>
 	<obj-entity name="VEipTScheduleList" className="com.aimluck.eip.cayenne.om.portlet.VEipTScheduleList" dbEntityName="v_eip_t_schedule_list">
 		<obj-attribute name="commonCategoryId" type="java.lang.Integer" db-attribute-path="COMMON_CATEGORY_ID"/>
