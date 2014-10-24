@@ -254,6 +254,9 @@ public class TestResultData implements ALData {
   public String getTestURL() {
 	    return ALEipUtils.getMessageList(test_url.getValue());
 	  }
+  public String getTestImageURL() {
+	    return ("http://capture.heartrails.com/free?" + ALEipUtils.getMessageList(test_url.getValue()));
+	  }
 
   /**
    * @return
@@ -279,8 +282,8 @@ public class TestResultData implements ALData {
   }
   //滝川
   public void setTestURL(String string) {
-	    test_url.setValue(string);
-	  }
+	  test_url.setValue(string);
+  }
   /**
    * @return
    */
