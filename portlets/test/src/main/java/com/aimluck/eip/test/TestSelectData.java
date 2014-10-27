@@ -321,7 +321,9 @@ public class TestSelectData extends
           + "."
           + TurbineUser.LAST_NAME_KANA_PROPERTY, last_name);
 
-      query.andQualifier(exp
+
+      query.andQualifier(
+    		  exp
         .orExp(exp2)
         .orExp(exp7)
         .orExp(exp3)
@@ -341,22 +343,25 @@ public class TestSelectData extends
 //          .valueOf((short) 100));
 //      query.andQualifier(exp4);
 //    }
-
-    // 公開ならば無条件に閲覧
+ // 公開ならば無条件に閲覧
     // 非公開ならuserIDが一致していれば閲覧可能
-//    Expression exp5 =
-//      ExpressionFactory.matchExp(EipTTest.PUBLIC_FLAG_PROPERTY, "T");
-//    if (target_user_id != null
-//      && (target_user_id.equals("all") || target_user_id.equals(String
-//        .valueOf(login_user_id)))) {
-//      Expression exp6 =
-//        ExpressionFactory.matchExp(EipTTest.PUBLIC_FLAG_PROPERTY, "F");
-//      Expression exp7 =
-//        ExpressionFactory.matchExp(EipTTest.USER_ID_PROPERTY, login_user_id);
-//      query.andQualifier(exp5.orExp(exp6.andExp(exp7)));
-//    } else {
-//      query.andQualifier(exp5);
-//    }
+/*
+    Expression exp8 =
+      ExpressionFactory.matchExp(EipTTest.PUBLIC_FLAG_PROPERTY, true);
+    if (target_user_id != null
+      && (target_user_id.equals("all") || target_user_id.equals(String
+        .valueOf(login_user_id)))) {
+      Expression exp9 =
+        ExpressionFactory.matchExp(EipTTest.PUBLIC_FLAG_PROPERTY, false);
+      Expression exp10 =
+        ExpressionFactory.matchExp(EipTTest.USER_ID_PROPERTY, login_user_id);
+      query.andQualifier(exp8.orExp(exp9.andExp(exp10)));
+    } else {
+      query.andQualifier(exp8);
+    }
+
+*/
+
 
     return buildSelectQueryForFilter(query, rundata, context);
   }
@@ -494,7 +499,11 @@ public class TestSelectData extends
       rd.setUpdateDate(record.getUpdateDate());
 
       // 公開/非公開を設定する．
-//      rd.setPublicFlag("T".equals(record.getPublicFlag()));
+      //rd.setPublicFlag("F".equals(record.getPublicFlag()));
+      System.out.println("---------------------------------------------");
+      System.out.println(record.getPublicFlag());
+
+     //rd.setPublicFlag(record.getPublicFlag());
       // 期限状態を設定する．
 //      rd.setLimitState(TestUtils.getLimitState(record.getEndDate()));
 
@@ -585,8 +594,13 @@ public class TestSelectData extends
 //        .getAliasName()
 //        .getValue());
       // 公開/非公開を設定する．
-//      rd.setPublicFlag("T".equals(record.getPublicFlag()));
+      rd.setPublicFlag("T".equals(record.getPublicFlag()));
+      System.out.println("---------------------------------------------");
+      System.out.println(record.getPublicFlag());
+
 //      rd.setAddonScheduleFlg("T".equals(record.getAddonScheduleFlg()));
+
+
       rd.setCreateDate(ALDateUtil
         .format(record.getCreateDate(), "yyyy年M月d日(E)"));
       rd.setUpdateDate(record.getUpdateDate());

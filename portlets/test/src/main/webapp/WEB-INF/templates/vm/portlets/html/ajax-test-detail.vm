@@ -37,7 +37,7 @@ $!result.Detail.TestName
 #ALtditem($!result.Detail.Note)
 
 #ALtdcaption($l10n.TODO_URL)
-#ALtditem($!result.Detail.TestaaaURL)
+#ALtditem($!result.Detail.TestURL)
 
 #ALtablefooter()
 #ALbuttonheader()

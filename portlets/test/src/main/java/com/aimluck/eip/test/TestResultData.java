@@ -70,7 +70,7 @@ public class TestResultData implements ALData {
   private ALStringField test_url;
 
   /** 公開/非公開フラグ */
-//  private boolean is_public;
+  private boolean is_public;
 
   /** スケジュール表示フラグ */
 //  private boolean addon_schedule_flg;
@@ -115,6 +115,7 @@ public class TestResultData implements ALData {
    */
   @Override
   public void initField() {
+
     test_id = new ALNumberField();
 //    category_id = new ALNumberField();
 //    state = new ALNumberField();
@@ -137,7 +138,7 @@ public class TestResultData implements ALData {
     update_date = new ALDateTimeField();
 //    limit_state = new ALNumberField();
 //    create_user_name = new ALStringField();
-//    is_public = true;
+    is_public = true;
 //    addon_schedule_flg = true;
     is_self_test = false;
   }
@@ -252,10 +253,13 @@ public class TestResultData implements ALData {
   }
   //滝川
   public String getTestURL() {
-	    return ALEipUtils.getMessageList(test_url.getValue());
+	  //return ALEipUtils.getMessageList(test_url.getValue());
+	  return test_url.getValue();
 	  }
   public String getTestImageURL() {
-	    return ("http://capture.heartrails.com/free?" + ALEipUtils.getMessageList(test_url.getValue()));
+	    //return  ALEipUtils.getMessageList("http://capture.heartrails.com/free?"+ test_url.getValue());
+	  	return ("http://capture.heartrails.com/free?"+ test_url.getValue());
+
 	  }
 
   /**
@@ -269,10 +273,13 @@ public class TestResultData implements ALData {
    * 公開/非公開フラグ．
    *
    * @return
-   */
-//  public boolean isPublic() {
-//    return is_public;
-//  }
+*/
+  public boolean isPublic() {
+    return is_public;
+  }
+  public boolean getPublic() {
+	    return is_public;
+	  }
 
   /**
    * @param string
@@ -287,9 +294,10 @@ public class TestResultData implements ALData {
   /**
    * @return
    */
-//  public void setPublicFlag(boolean bool) {
-//    is_public = bool;
-//  }
+  public void setPublicFlag(boolean bool) {
+    is_public = bool;
+
+  }
 
   /**
    * @param string

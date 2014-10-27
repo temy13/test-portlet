@@ -86,24 +86,20 @@
 <th>#ALajaxsort('test_name' $l10n.TODO_TITLE $result 'TestListScreen')</th>
 </tr>
 #foreach ($record in $result.List)
-<tr>
+	<tr>
+		#ALtdcellAtt("<input name='check$!record.TestId' type='checkbox' value='$!record.TestId'/>" 'align="center" class="auiMTCheck"')
+		#ALtdcellheaderAtt('class="auiMTCaption"')
+		<div>
+			<a href="javascript:void(0);
+"onclick="aipo.common.showDialog('$!utils.escapeXML($!jslink.getPortletById($!portlet.ID).addQueryData("template","TestDetailScreen").addQueryData("entityid",$record.TestId))');">$!record.TestName</a>
+		</div>
 
-#ALtdcellAtt("<input name='check$!record.TestId' type='checkbox' value='$!record.TestId'/>" 'align="center" class="auiMTCheck"')
-#ALtdcellheaderAtt('class="auiMTCaption"')
-<div>
-<a href="javascript:void(0);" onclick="aipo.common.showDialog('$!utils.escapeXML($!jslink.getPortletById($!portlet.ID).addQueryData("template","TestDetailScreen").addQueryData("entityid",$record.TestId))');">$!record.TestName</a>
-</div>
+		<div>
+			<a href='($!record.TestURL)'>$!record.TestURL</a>
+		</div>
 
-
-<div>
-<a href='($!record.TestURL)'>$!record.TestURL</a>
-</div>
-
-
-#ALtdcellfooter()
-
-</tr>
-
+		#ALtdcellfooter()
+	</tr>
 #end
 #AUItablefooter()
 <div class="auiSummaryMeta clearfix">

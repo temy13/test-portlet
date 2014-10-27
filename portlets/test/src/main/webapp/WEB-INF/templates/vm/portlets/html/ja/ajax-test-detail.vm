@@ -39,7 +39,16 @@ $!result.Detail.TestName
 #ALtdcaption($l10n.TODO_URL)
 #ALtditem($!result.Detail.TestURL)
 #ALtditemheader()
-<a href='($!result.Detail.TestURL)'><img src='($!{result.Detail.getTestImageURL()})' alt= '($!{result.Detail.TestURL})' width="200" height="300" /></a>
+<a href='$!result.Detail.TestURL'><img src='$!{result.Detail.TestImageURL}' alt= "サムネイル画像" width="200" height="300" /></a>
+#ALtditemfooter()
+
+#ALtdcaption($l10n.TODO_PUBLIC)
+#ALtditemheader()
+#if($!result.Detail.Public)
+#$l10n.TODO_OPEN_PUBLIC
+#else
+#$l10n.TODO_CLOSE_PUBLIC
+#end
 #ALtditemfooter()
 
 #ALtablefooter()

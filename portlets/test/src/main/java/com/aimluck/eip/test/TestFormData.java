@@ -119,7 +119,7 @@ public class TestFormData extends ALAbstractFormData {
 //  private boolean is_new_category;
 
   /** 公開/非公開フラグ */
-//  private ALStringField public_flag;
+  private ALStringField public_flag;
 
   /** スケジュール表示フラグ */
 //  private ALStringField addon_schedule_flg;
@@ -260,11 +260,11 @@ public class TestFormData extends ALAbstractFormData {
 //      .getl10n("TODO_SETFIELDNAME_CATEGORY_NAME"));
 
     // 公開区分
-//    public_flag = new ALStringField();
-//    public_flag.setFieldName(ALLocalizationUtils
-//      .getl10n("TODO_SETFIELDNAME_PUBLIC"));
-//    public_flag.setValue("T");
-//    public_flag.setTrim(true);
+    public_flag = new ALStringField();
+    public_flag.setFieldName(ALLocalizationUtils
+      .getl10n("TODO_SETFIELDNAME_PUBLIC"));
+    public_flag.setValue("T");
+    public_flag.setTrim(true);
 
 //    addon_schedule_flg = new ALStringField();
 //    addon_schedule_flg.setFieldName(ALLocalizationUtils
@@ -435,7 +435,7 @@ public class TestFormData extends ALAbstractFormData {
       /* 滝川 入力項目追加 URL*/
       test_url.setValue(test.getTestURL());
       // 公開区分
-//      public_flag.setValue(test.getPublicFlag());
+      public_flag.setValue(test.getPublicFlag());
 
       // 担当者
       user_id.setValue(test.getTurbineUser().getUserId());
@@ -548,7 +548,7 @@ public class TestFormData extends ALAbstractFormData {
       test.setTestURL(test_url.getValue());
 
       // 公開区分
-//      test.setPublicFlag(public_flag.getValue());
+      test.setPublicFlag(public_flag.getValue());
 //      test.setAddonScheduleFlg(addon_schedule_flg.getValue());
       // 作成日
       test.setCreateDate(Calendar.getInstance().getTime());
@@ -750,7 +750,7 @@ public class TestFormData extends ALAbstractFormData {
       // 滝川 URL
       test.setTestURL(test_url.getValue());
       // 公開区分
-//      test.setPublicFlag(public_flag.getValue());
+      test.setPublicFlag(public_flag.getValue());
 //      test.setAddonScheduleFlg(addon_schedule_flg.getValue());
       // 更新日
       test.setUpdateDate(Calendar.getInstance().getTime());
@@ -978,9 +978,9 @@ public class TestFormData extends ALAbstractFormData {
    *
    * @return
    */
-//  public ALStringField getPublicFlag() {
-//    return public_flag;
-//  }
+  public ALStringField getPublicFlag() {
+    return public_flag;
+  }
 //
 //  public ALStringField getAddonScheduleFlg() {
 //    return addon_schedule_flg;

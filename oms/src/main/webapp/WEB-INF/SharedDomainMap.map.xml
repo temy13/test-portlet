@@ -424,6 +424,7 @@
 	<db-entity name="eip_t_test">
 		<db-attribute name="CREATE_DATE" type="DATE" length="4"/>
 		<db-attribute name="NOTE" type="CLOB"/>
+		<db-attribute name="PUBLIC_FLAG" type="BOOLEAN"/>
 		<db-attribute name="TEST_ID" type="INTEGER" isPrimaryKey="true" isGenerated="true" isMandatory="true" length="4"/>
 		<db-attribute name="TEST_NAME" type="VARCHAR" length="99"/>
 		<db-attribute name="TEST_URL" type="VARCHAR" length="99"/>
@@ -967,6 +968,7 @@
 	<obj-entity name="EipTTest" className="com.aimluck.eip.cayenne.om.portlet.EipTTest" dbEntityName="eip_t_test">
 		<obj-attribute name="createDate" type="java.util.Date" db-attribute-path="CREATE_DATE"/>
 		<obj-attribute name="note" type="java.lang.String" db-attribute-path="NOTE"/>
+		<obj-attribute name="publicFlag" type="java.lang.Boolean" db-attribute-path="PUBLIC_FLAG"/>
 		<obj-attribute name="testName" type="java.lang.String" db-attribute-path="TEST_NAME"/>
 		<obj-attribute name="testURL" type="java.lang.String" db-attribute-path="TEST_URL"/>
 		<obj-attribute name="updateDate" type="java.util.Date" db-attribute-path="UPDATE_DATE"/>

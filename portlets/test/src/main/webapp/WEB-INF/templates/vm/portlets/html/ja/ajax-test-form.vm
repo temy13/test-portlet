@@ -61,6 +61,11 @@
 #ALtextfieldw100('test_url' $!result.TestURL 50 'active')
 #ALtditemfooter()
 
+#ALtdcaption($!result.getFieldName("public_flag"))
+#ALtditemheader()
+<input name="public_flag" type="radio" value="true" id="$!{portlet.ID}public_flag_public_id" #if ($!result.PublicFlag.toString() == "T") checked="checked" #end/><label for="$!{portlet.ID}public_flag_public_id">&nbsp;$l10n.TODO_OPEN_PUBLIC</label>
+<input name="public_flag" type="radio" value="false" id="$!{portlet.ID}public_flag_private_id" #if ($!result.PublicFlag.toString() == "F") checked="checked" #end/><label for="$!{portlet.ID}public_flag_private_id">&nbsp;$l10n.TODO_CLOSE_PUBLIC</label>
+#ALtditemfooter()
 
 #ALtablefooter()
 #ALbuttonheader()
