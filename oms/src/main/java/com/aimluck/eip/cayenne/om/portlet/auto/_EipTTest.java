@@ -41,15 +41,12 @@ public class _EipTTest extends org.apache.cayenne.CayenneDataObject {
         return (String)readProperty("testURL");
     }
     public void setPublicFlag(String string) {
-    	System.out.println("==========================================!!");
     	Boolean PF = new Boolean(string);
     	System.out.println(PF);
         writeProperty("publicFlag",PF);
     }
     public String getPublicFlag() {
     	Boolean bl = (Boolean)readProperty("publicFlag");
-    	System.out.println("!!==========================================!!");
-    	System.out.println(bl);
     	if(bl == Boolean.TRUE)
     		return "T";
     	else

@@ -438,13 +438,13 @@ public class TestResultData implements ALData {
 //    return create_user_name;
 //  }
 
-//  public boolean isSelfTest() {
-//    return is_self_test;
-//  }
+  public boolean isSelfTest() {
+    return is_self_test;
+  }
 
-//  public void setIsSelfTest(boolean is_self_test) {
-//    this.is_self_test = is_self_test;
-//  }
+  public void setIsSelfTest(boolean is_self_test) {
+    this.is_self_test = is_self_test;
+  }
 
   /**
    * hasAclEditTestOtherを取得します。

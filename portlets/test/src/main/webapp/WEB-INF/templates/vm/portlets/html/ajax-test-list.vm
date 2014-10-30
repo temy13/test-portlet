@@ -90,13 +90,17 @@
 
 #ALtdcellAtt("<input name='check$!record.TestId' type='checkbox' value='$!record.TestId'/>" 'align="center" class="auiMTCheck"')
 #ALtdcellheaderAtt('class="auiMTCaption"')
+
+#if(! ${record.isPublic()})
+#<img src="images/todo/todo_secret.gif" border="0" width="16" height="16" alt="非公開">
+#end
+
 <div>
+
 <a href="javascript:void(0);" onclick="aipo.common.showDialog('$!utils.escapeXML($!jslink.getPortletById($!portlet.ID).addQueryData("template","TestDetailScreen").addQueryData("entityid",$record.TestId))');"></a>
 ##$!record.TestName
 
 <a href="$!record.TestURL">$!record.TestURL</a>
-
-
 
 </div>
 #ALtdcellfooter()
